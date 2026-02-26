@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://codegithubka.github.io/al-folio/sitemap.xml
+Sitemap: https://codegithubka.github.io/sitemap.xml

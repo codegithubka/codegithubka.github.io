@@ -2,31 +2,29 @@
 layout: about
 title: about
 permalink: /
-subtitle: MSc Computational Science - University of Amsterdam
+subtitle: MSc Computational Science — University of Amsterdam
 
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
+  image_circular: false
   more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <p>Amsterdam, Netherlands</p>
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+selected_papers: false
+social: true
 
 announcements:
-  enabled: true # includes a list of news items
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
+  enabled: false
 
 latest_posts:
-  enabled: true
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+  enabled: false
 ---
 
-I'm a MSc Computational Science student at the University of Amsterdam with a BSc in Electrical Engineering from UCLA. My work focuses on computational finance, mathematical modeling, and high-performance computing.
+I am an MSc Computational Science student at the University of Amsterdam (GPA: 8.7/10), with a BSc in Electrical Engineering from UCLA.
+My work focuses on computational finance and quantitative methods — optimal execution strategies, stochastic modeling, and high-performance numerical simulation.
 
-I'm particularly interested in quantitative trading, optimal execution strategies, and complex systems simulation. 
+My current research develops an optimal trade execution framework under regime-switching liquidity, combining continuous-time Markov chains, jump-diffusion price dynamics, and CIR liquidity processes to improve on classical Almgren–Chriss models.
+I also build large-scale stochastic simulations: a Numba-optimized cellular automaton running on the Snellius HPC cluster (highest grade in cohort), and a real-time multi-agent system with KD-Tree spatial indexing for 500+ agent simulations at 60 FPS.
+
+Previously, I interned as an AI researcher at the [Demokritos National Centre of Scientific Research](https://www.demokritos.gr/) (ensemble autoencoders for financial segmentation) and as a financial risk management intern at [METLEN Energy & Metals](https://www.metlen.com/) (energy trading desk).

@@ -1,81 +1,27 @@
 ---
 layout: page
-title: project 1
-description: with background image
-img: assets/img/12.jpg
+title: Optimal Trade Execution under Regime-Switching Liquidity
+description: Regime-switching market simulator with jump-diffusion price dynamics and CIR liquidity — extended Almgren–Chriss with dynamic urgency recalibration
 importance: 1
-category: work
-related_publications: true
+category: research
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+Classical optimal execution models (Almgren–Chriss and variants) treat market impact and liquidity as static parameters.
+In practice, markets alternate between distinct regimes — low-volatility trending conditions and high-volatility stress periods — and execution strategies that ignore this structure incur avoidable costs.
+This project builds a regime-aware execution framework that adapts in real time to estimated market state.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+#### Model components
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+- **Regime-switching dynamics:** Market state modeled as a continuous-time Markov chain (CTMC) with estimated transition rates between liquidity regimes; execution urgency and impact parameters are state-dependent
+- **Jump-diffusion price process:** Asset mid-price follows a jump-diffusion (Merton) process, capturing both continuous Brownian motion and discrete sentiment-driven jumps
+- **CIR liquidity process:** Bid-ask spread and market depth modeled via Cox–Ingersoll–Ross processes, ensuring mean-reversion and non-negativity
+- **Dynamic urgency recalibration:** Extended Almgren–Chriss framework recalibrates the execution urgency parameter at each regime transition, rebalancing the trade-off between market impact and timing risk
+- **Monte Carlo validation:** Execution strategies benchmarked against TWAP across 10,000+ simulated paths per regime configuration; regime-adaptive strategy achieves statistically significant cost savings (p < 0.01) under simulated stress conditions
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+#### Technical stack
 
-You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
-Say you wanted to write a bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+Python · NumPy · SciPy · Monte Carlo simulation · Stochastic differential equations · Continuous-time Markov chains
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
-
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
-
-{% endraw %}
+<!-- Add GitHub link when repository is ready:
+[View on GitHub](https://github.com/codegithubka/REPO_NAME)
+-->
